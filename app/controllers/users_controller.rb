@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   def user_details
     @an_id = params.fetch("an_id")
     @the_user = User.where({ :id => @an_id }).at(0)
-    @mat
 
     render ({ :template => "user_templates/show.html.erb"})
   end
