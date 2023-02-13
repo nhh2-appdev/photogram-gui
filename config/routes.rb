@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # define the "/" URL route
-   get("/",{ :controller => "application", :action => "homepage" })
+   get("/",{ :controller => "users", :action => "index" })
 
   # define the "/users" URL route
     get("/users",{ :controller => "users", :action => "index" })
@@ -14,5 +14,14 @@ Rails.application.routes.draw do
 
   # define the "/photos/dynamic" URL route
     get("/photos/:an_id",{ :controller => "photos", :action => "photo_details" })
+
+  # define the "delete_photo" URL route
+    get("/delete_photo/:an_id",{ :controller => "photos", :action => "delete" })
+
+  # define the "update_photo" URL route
+    get("/update_photo/:an_id",{ :controller => "photos", :action => "update" })
+
+  # define the "insert_photo_record" URL route
+      get("/insert_photo_record",{ :controller => "photos", :action => "insert_photo_record" })
 
 end
