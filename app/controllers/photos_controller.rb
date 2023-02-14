@@ -28,8 +28,6 @@ class PhotosController < ApplicationController
 
     a_new_photo.save
 
-    #render ({ :template => "photo_templates/record.html.erb"})
-
     redirect_to("/photos/" + a_new_photo.id.to_s)
   end
 
@@ -59,6 +57,17 @@ class PhotosController < ApplicationController
     #render ({ :template => "photo_templates/record.html.erb"})
     
     redirect_to("/photos")
+  end
+
+  def comment
+    #the_id = params.fetch("an_id")
+    #matching_photos = Photo.where({ :id => the_id })
+    #the_photo = matching_photos.at(0)
+    #the_photo.destroy
+
+    render ({ :template => "photo_templates/record.html.erb"})
+    
+    #redirect_to("/photos")
   end
 
 end
