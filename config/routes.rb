@@ -7,10 +7,10 @@ Rails.application.routes.draw do
     get("/users",{ :controller => "users", :action => "index" })
   
   # define the "/users/dynamic_username" URL route
-    get("/users/anisa",{ :controller => "users", :action => "user_details_final" })
-
+   #get("/users/anisa",{ :controller => "users", :action => "user_details_final" }) 
+  
   # define the "/users/dynamic" URL route
-    get("/users/:an_id",{ :controller => "users", :action => "user_details" })
+    get("/users/:a_username",{ :controller => "users", :action => "user_details" })
 
   # define the "/insert_new_user" URL route
     get("/insert_new_user",{ :controller => "users", :action => "new_user" })

@@ -3,19 +3,20 @@ class UsersController < ApplicationController
     matching_users = User.all
     @list_of_users = matching_users.order({ :username => :asc })
 
-    render ({ :template => "user_templates/index.html.erb" })
+    render({ :template => "user_templates/index.html.erb" })
   end
 
   def user_details
-    @an_id = params.fetch("an_id")
-    @the_user = User.where({ :id => @an_id }).at(0)
-    @the_username = @the_user.username
-    redirect_to("/users/" + @the_user.username)
+    @an_id = params.fetch("a_username")
+    @the_user = User.where({ :username => @an_id }).at(0)
+    render({ :template => "user_templates/show.html.erb" })
+    #@the_username = @the_user
+    #redirect_to("/users/" + @the_user.username)
     
-    def user_details_final
-      @the_user = User.where({ :username => "anisa" }).at(0)
-      render ({ :template => "user_templates/show.html.erb" })
-    end
+    #def user_details_final
+      #@an_id = params.fetch("a_username")
+      #@the_user = User.where({ :username => "anisa" }).at(0) 
+    #end
   end
 
   def new_user
